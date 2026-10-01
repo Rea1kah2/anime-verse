@@ -38,49 +38,52 @@ class BottomNavigationShell extends StatelessWidget {
           }
         }
       },
-      child: Scaffold(
-        body: navigationShell,
-        extendBody: true,
-        bottomNavigationBar: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.04,
-            vertical: 0,
-          ),
-          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
-          decoration: const BoxDecoration(
-            color: Color(0xFF0b395e),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(
-                context,
-                0,
-                Icons.home_rounded,
-                'Home',
-                currentIndex,
-                screenWidth,
-                screenHeight,
-              ),
-              _buildNavItem(
-                context,
-                1,
-                Icons.favorite_rounded,
-                'Favorites',
-                currentIndex,
-                screenWidth,
-                screenHeight,
-              ),
-              _buildNavItem(
-                context,
-                2,
-                Icons.person_rounded,
-                'Profile',
-                currentIndex,
-                screenWidth,
-                screenHeight,
-              ),
-            ],
+      child: SafeArea(
+        top: false,
+        child: Scaffold(
+          body: navigationShell,
+          extendBody: true,
+          bottomNavigationBar: Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.04,
+              vertical: 0,
+            ),
+            padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+            decoration: const BoxDecoration(
+              color: Color(0xFF0b395e),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(
+                  context,
+                  0,
+                  Icons.home_rounded,
+                  'Home',
+                  currentIndex,
+                  screenWidth,
+                  screenHeight,
+                ),
+                _buildNavItem(
+                  context,
+                  1,
+                  Icons.favorite_rounded,
+                  'Favorites',
+                  currentIndex,
+                  screenWidth,
+                  screenHeight,
+                ),
+                _buildNavItem(
+                  context,
+                  2,
+                  Icons.person_rounded,
+                  'Profile',
+                  currentIndex,
+                  screenWidth,
+                  screenHeight,
+                ),
+              ],
+            ),
           ),
         ),
       ),
