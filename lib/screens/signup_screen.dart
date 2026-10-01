@@ -225,11 +225,14 @@ class SignUpScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Already have an account? ",
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.04,
-                          color: Colors.white70,
+                      Flexible(
+                        child: Text(
+                          "Already have an account? ",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.04,
+                            color: Colors.white70,
+                          ),
                         ),
                       ),
                       TextButton(

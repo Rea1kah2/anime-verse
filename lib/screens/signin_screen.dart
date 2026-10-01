@@ -243,11 +243,14 @@ class SignInScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Don't have an account? ",
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.04,
-                          color: Colors.white70,
+                      Flexible(
+                        child: Text(
+                          "Don't have an account? ",
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.04,
+                            color: Colors.white70,
+                          ),
                         ),
                       ),
                       TextButton(
