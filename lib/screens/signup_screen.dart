@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../widgets/app_scaffold.dart';
+import 'package:go_router/go_router.dart';
+import '../config/routes.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -131,6 +133,7 @@ class SignUpScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // TODO: Implement sign up functionality
+                        context.go(AppRoutes.home);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue.withOpacity(0.8),
@@ -238,6 +241,7 @@ class SignUpScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           // TODO: Navigate to sign in screen
+                          context.go(AppRoutes.signIn);
                         },
                         child: Text(
                           'Sign In',
