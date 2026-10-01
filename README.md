@@ -1,16 +1,27 @@
-# anime_verse
+# AnimeVerse
 
-A new Flutter project.
+Aplikasi Flutter "AnimeVerse" untuk praktikum Lab Pemrograman Mobile (IKLC), dikerjakan mengikuti modul di https://s.id/IKLC-Mobile.
 
-## Getting Started
+## Menjalankan proyek
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Progress
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [x] Modul 1 — Pengenalan Flutter
+- [x] Modul 2 — Fondasi UI: Widget & Layouting (Sign In, Sign Up, Home, Detail, Favorite, Profile)
+- [x] Modul 3 — Navigasi & Data Passing (go_router, StatefulShellRoute, SafeArea)
+- [ ] Modul 4 — State Management
+- [ ] Modul 5 — API
+- [ ] Modul 6 — Firebase: Authentication
+- [ ] Modul 7 — Firebase: Cloud Firestore
+- [ ] Modul 8 — Finishing, Build, dan Deployment
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Stack
+
+- Flutter 3.24 / Dart 3.5
+- go_router untuk navigasi deklaratif
+- flutter_svg untuk ikon vektor
