@@ -40,6 +40,7 @@ class AnimeView extends StatelessWidget {
             itemBuilder: (context, index) {
               final anime = DummyData.animeList[index];
               return AnimeCard(
+                id: anime.id,
                 title: anime.title,
                 imagePath: anime.imagePath,
               );
