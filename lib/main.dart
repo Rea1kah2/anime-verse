@@ -1,5 +1,6 @@
-import 'package:anime_verse/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'config/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'AnimeVerse',
       theme: ThemeData(
         fontFamily: 'Urbanist',
       ),
-      home: const SignInScreen(),
+      routerConfig: createRouter(),
       debugShowCheckedModeBanner: false,
     );
   }
