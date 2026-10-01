@@ -4,43 +4,22 @@ import 'package:go_router/go_router.dart';
 import '../config/routes.dart';
 
 class BottomNavigationShell extends StatelessWidget {
-  final Widget child;
+  final StatefulNavigationShell navigationShell;
 
-  const BottomNavigationShell({super.key, required this.child});
-
-  int _calculateSelectedIndex(BuildContext context) {
-    final String location = GoRouterState.of(context).uri.path;
-    switch (location) {
-      case AppRoutes.home:
-        return 0;
-      case AppRoutes.favorites:
-        return 1;
-      case AppRoutes.profile:
-        return 2;
-      default:
-        return 0;
-    }
-  }
+  const BottomNavigationShell({super.key, required this.navigationShell});
 
   void _onItemTapped(BuildContext context, int index) {
-    switch (index) {
-      case 0:
-        context.go(AppRoutes.home);
-        break;
-      case 1:
-        context.go(AppRoutes.favorites);
-        break;
-      case 2:
-        context.go(AppRoutes.profile);
-        break;
-    }
+    navigationShell.goBranch(
+      index,
+      initialLocation: index == navigationShell.currentIndex,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final currentIndex = _calculateSelectedIndex(context);
+    final currentIndex = navigationShell.currentIndex;
 
     return PopScope(
       canPop: false,
@@ -60,7 +39,7 @@ class BottomNavigationShell extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: child,
+        body: navigationShell,
         extendBody: true,
         bottomNavigationBar: Container(
           margin: EdgeInsets.symmetric(

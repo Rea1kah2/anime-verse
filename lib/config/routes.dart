@@ -19,8 +19,6 @@ class AppRoutes {
 }
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> _shellNavigatorKey =
-    GlobalKey<NavigatorState>();
 
 GoRouter createRouter() {
   return GoRouter(
@@ -50,27 +48,38 @@ GoRouter createRouter() {
         },
       ),
 
-      // 3. ShellRoute (Untuk Halaman yang menggunakan Bottom Navigation Bar)
-      ShellRoute(
-        navigatorKey: _shellNavigatorKey,
-        builder: (context, state, child) {
-          return BottomNavigationShell(child: child);
+      // 3. StatefulShellRoute (Untuk Halaman yang menggunakan Bottom Navigation Bar)
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) {
+          return BottomNavigationShell(navigationShell: navigationShell);
         },
-        routes: [
-          GoRoute(
-            path: AppRoutes.home,
-            name: 'home',
-            builder: (context, state) => const HomeScreen(),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.home,
+                name: 'home',
+                builder: (context, state) => const HomeScreen(),
+              ),
+            ],
           ),
-          GoRoute(
-            path: AppRoutes.favorites,
-            name: 'favorite',
-            builder: (context, state) => const FavoriteScreen(),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.favorites,
+                name: 'favorite',
+                builder: (context, state) => const FavoriteScreen(),
+              ),
+            ],
           ),
-          GoRoute(
-            path: AppRoutes.profile,
-            name: 'profile',
-            builder: (context, state) => const ProfileScreen(),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.profile,
+                name: 'profile',
+                builder: (context, state) => const ProfileScreen(),
+              ),
+            ],
           ),
         ],
       ),
