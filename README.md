@@ -14,7 +14,7 @@ flutter run
 - [x] Modul 1 — Pengenalan Flutter
 - [x] Modul 2 — Fondasi UI: Widget & Layouting (Sign In, Sign Up, Home, Detail, Favorite, Profile)
 - [x] Modul 3 — Navigasi & Data Passing (go_router, StatefulShellRoute, SafeArea)
-- [ ] Modul 4 — State Management
+- [x] Modul 4 — State Management (Provider, SharedPreferences, Filtering, Search)
 - [ ] Modul 5 — API
 - [ ] Modul 6 — Firebase: Authentication
 - [ ] Modul 7 — Firebase: Cloud Firestore
@@ -24,4 +24,5 @@ flutter run
 
 - Flutter 3.24 / Dart 3.5
 - go_router untuk navigasi deklaratif
+- provider & shared_preferences untuk state management dan persistensi lokal
 - flutter_svg untuk ikon vektor
